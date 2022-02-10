@@ -37,8 +37,9 @@ const PostDetails = ({ post }) => {
 export default PostDetails;
 
 // Fetch data at build time
-export async function getStaticProps({ params }) {
-  const data = await getPostDetails(params.slug);
+export async function getStaticProps({ params: {slug} }) {
+  const data = await getPostDetails(slug);
+  // console.log(`Building slug: ${slug}`)
   return {
     props: {
       post: data,

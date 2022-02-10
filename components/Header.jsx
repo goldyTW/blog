@@ -4,8 +4,8 @@ import Link from 'next/link';
 // import { getCategories } from '../services';
 
 const categories = [
-  {name:'react', slug:'react'},
-  {name:'laravel', slug:'laravel'},
+  {name:'Home', slug:'/'},
+  // {name:'kucing', slug:'kucing'},
 ]
 const Header = () => {
   // const [categories, setCategories] = useState([]);
@@ -26,7 +26,7 @@ const Header = () => {
         </div>
         <div className="hidden md:float-left md:contents">
           {categories.map((category, index) => (
-            <Link key={index} href={`/category/${category.slug}`}><span className="md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer">{category.name}</span></Link>
+            <Link key={index} href={`${category.slug}`}><span className="md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer">{category.name}</span></Link>
           ))}
         </div>
       </div>

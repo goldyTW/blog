@@ -3,8 +3,7 @@ import { PostCard, Categories, PostWidget, FeaturedPostCard } from '../component
 import { getPosts } from '../services';
 import { FeaturedPosts } from '../sections/index';
 
-export default function Home({posts}) {
-  console.log(posts)
+export default function Home({posts}: {posts:any}) {
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
@@ -16,7 +15,7 @@ export default function Home({posts}) {
          
          {/* leftside */}
          <div className="lg:col-span-8 col-span-1">
-            {posts.map((post, index) => (
+            {posts.map((post : any, index : any) => (
               <PostCard key={index} post={post.node} />
             ))}
            
@@ -25,7 +24,7 @@ export default function Home({posts}) {
         {/* rightside */}
         <div className="lg:col-span-4 col-span-1">
           <div className="lg:sticky relative top-8">
-            <PostWidget />
+            <PostWidget categories={undefined} slug={undefined}/>
             <Categories />
           </div>
         </div>
